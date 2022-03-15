@@ -24,5 +24,11 @@
     <ClCompile Include="ch3_programming.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="OJ1308.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="OJ1309.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
