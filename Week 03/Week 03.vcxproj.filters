@@ -18,5 +18,8 @@
     <ClCompile Include="ch4_exercise.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ch4_programming.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
