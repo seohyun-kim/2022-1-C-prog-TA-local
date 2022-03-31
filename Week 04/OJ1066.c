@@ -1,4 +1,4 @@
-/*
+ /*
 온라인 저지 1066: [문법-비트단위논리연산] 비트단위로 and 하여 출력하기
 http://eseoj.inu.ac.kr/JudgeOnline/problem.php?id=1066
 */

@@ -53,7 +53,7 @@ int main() {
 	int c500 = change / 500;
 	change = change % 500;
 
-	int c100 = change / 100;
+	int c100 = change / 100;  
 
 
 	printf("5천원권 : %d장\n천원권 : %d장\n오백원 : %d개\n백원 : %d개", c5000, c1000, c500, c100);
