@@ -21,5 +21,29 @@
     <ClCompile Include="1419.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2ndMidterm_1_OJ1571.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2ndMidterm_2_OJ1572.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2ndMidterm_3_OJ1573.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2ndMidterm_4_OJ1574.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2ndMidterm_5_OJ1575.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2ndMidterm_6_OJ1576.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2ndMidterm_7_OJ1577.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2ndMidterm_8_OJ1478.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

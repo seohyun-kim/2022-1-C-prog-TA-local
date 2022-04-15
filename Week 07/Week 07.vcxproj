@@ -142,8 +142,17 @@
     <ClCompile Include="1419.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="2ndMidterm_1_OJ1571.c" />
+    <ClCompile Include="2ndMidterm_2_OJ1572.c" />
+    <ClCompile Include="2ndMidterm_3_OJ1573.c" />
+    <ClCompile Include="2ndMidterm_4_OJ1574.c" />
+    <ClCompile Include="2ndMidterm_5_OJ1575.c" />
+    <ClCompile Include="2ndMidterm_6_OJ1576.c" />
+    <ClCompile Include="2ndMidterm_7_OJ1577.c" />
+    <ClCompile Include="2ndMidterm_8_OJ1478.c" />
     <ClCompile Include="function.c">
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</SDLCheck>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
