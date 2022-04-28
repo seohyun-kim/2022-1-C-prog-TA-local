@@ -15,16 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="function_examples.c">
+    <ClCompile Include="ch9.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="OJ1135.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="randomUpDown.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="UpDownTestCode.c">
+    <ClCompile Include="OJ1577.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

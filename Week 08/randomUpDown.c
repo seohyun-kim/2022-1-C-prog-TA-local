@@ -55,11 +55,11 @@ int main() {
 
 	while (chance > 0) {
 
-		printf("숫자를 입력하세요(0~100) : ");
+		printf("숫자를 입력하세요(1~100) : ");
 		scanf("%d", &mynum);
 
 		if (mynum <= 0 || mynum > 100) {
-			printf("범위에 벗어난 숫자입니다. 다시 입력하세요.\n");
+			printf("범위에 벗어난 숫자입니다. 다시 입력하세요.\n\n");
 			continue;
 		}
 
@@ -67,8 +67,8 @@ int main() {
 			printf("YOU WIN!\n");
 			return 0;
 		}
-		else if (mynum > randNum) printf("Down\n");
-		else printf("Up\n");
+		else if (mynum > randNum) printf("Down\n\n");
+		else printf("Up\n\n");
 
 		chance--;
 	}
