@@ -4,6 +4,35 @@
 // 전역변수 , 지역변수
 // auto, static, volatile, register, extern
 
+int x = 10; // 전역변수(global)
+
+void abc() {
+	static int count = 0; // static 변수는 이전의 값 유지
+	count++;
+	printf("count : %d", count);
+}
+
+
+int main() {
+	int a; // 지역변수(local)
+	int x = 20; // 변수 이름 같으면 로컬변수 우선
+	printf("%d", x);
+
+	abc();
+	abc();
+	abc();
+	abc();
+	abc();
+
+	volatile int n = 0; // volatile 변수는 최적화를 하지 않음
+
+	for (int i = 0; i < 10; i++)
+	{
+		n = i;
+	}
+
+	return 0;
+}
 
 
 
@@ -130,6 +159,31 @@ int main() {
 	return 0;
 }
 #endif
+
+
+
+// 하노이탑 count를 static 변수로!
+
+int hanoi(int n, char from, char tmp, char to) {
+	static int count = 0;
+	if (n == 1) {
+		printf("원판 1을 %c에서 %c로 옮긴다.\n", from, to);
+		count++;
+	}
+	else {
+		hanoi(n - 1, from, to, tmp);
+		printf("원판 %d을 %c에서 %c로 옮긴다.\n", n, from, to);
+		count++;
+		hanoi(n - 1, tmp, from, to);
+	}
+	return count;
+}
+
+int main() {
+
+	printf("count = %d", hanoi(3, 'A', 'B', 'C'));
+	return 0;
+}
 
 
 
