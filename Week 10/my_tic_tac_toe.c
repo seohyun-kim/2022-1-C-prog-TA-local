@@ -1,62 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
-
 #define BOARDSIZE 5
   
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
+void printBoard(char board[BOARDSIZE][BOARDSIZE]);
+int checkSum(char board[BOARDSIZE][BOARDSIZE]);
+int isCompleted(int sum);
 
-void printBoard(char board[BOARDSIZE][BOARDSIZE]) {
-	//printf("-----------\n");
-	for (int i = 0; i < BOARDSIZE; i++){
-		for (int j = 0; j < BOARDSIZE; j++) printf(" %c |", board[i][j]);
-		printf("\n");
-		//printf("-----------\n");
-	}
-}
-
-int isCompleted(int sum) {
-	if (sum == 'O'*BOARDSIZE) { // 'O' 한 줄 발생
-		printf("You Win!!\n");
-		return 1;
-	}
-	else if (sum == 'X' * BOARDSIZE) { // 'X' 한 줄 발생
-		printf("Computer Win!!\n");
-		return 1;
-	}
-	return 0;
-}
-
-int checkSum(char board[BOARDSIZE][BOARDSIZE]) {
-	int sum = 0;
-	// 가로 합
-	for (int i = 0; i < BOARDSIZE; i++){
-		sum = 0;
-		for (int j = 0; j < BOARDSIZE; j++)	sum += board[i][j];
-		if (isCompleted(sum)) return 1;
-	}
-
-	// 세로 합
-	for (int i = 0; i < BOARDSIZE; i++){
-		sum = 0;
-		for (int j = 0; j < BOARDSIZE; j++)	sum += board[j][i];
-		if (isCompleted(sum)) return 1;
-	}
-
-	// 대각선
-	sum = 0;
-	for (int i = 0; i < BOARDSIZE; i++) sum += board[i][i];
-	if (isCompleted(sum)) return 1;
-
-	// 역대각
-	sum = 0;
-	for (int i = 0; i < BOARDSIZE; i++) sum += board[i][BOARDSIZE - 1 - i];
-	if (isCompleted(sum)) return 1;
-
-	return 0;
-}
 
 int main() {
 
@@ -129,3 +81,55 @@ int main() {
 }
 
 
+
+// 보드 화면을 콘솔에 출력하는 함수
+void printBoard(char board[BOARDSIZE][BOARDSIZE]) {
+	for (int i = 0; i < BOARDSIZE; i++) {
+		for (int j = 0; j < BOARDSIZE; j++) printf(" %c |", board[i][j]);
+		printf("\n");
+	}
+}
+
+// 게임이 끝났는지 검사 (승부 판정)
+// return 값 (1 : 게임 끝 | 0 : 다음 라운드 진행)
+int isCompleted(int sum) {
+	if (sum == 'O' * BOARDSIZE) { // 'O' 한 줄 발생
+		printf("You Win!!\n");
+		return 1;
+	}
+	else if (sum == 'X' * BOARDSIZE) { // 'X' 한 줄 발생
+		printf("Computer Win!!\n");
+		return 1;
+	}
+	return 0;
+}
+
+// 각 줄의 합으로 빙고를 검사
+int checkSum(char board[BOARDSIZE][BOARDSIZE]) {
+	int sum = 0;
+	// 가로 합
+	for (int i = 0; i < BOARDSIZE; i++) {
+		sum = 0;
+		for (int j = 0; j < BOARDSIZE; j++)	sum += board[i][j];
+		if (isCompleted(sum)) return 1;
+	}
+
+	// 세로 합
+	for (int i = 0; i < BOARDSIZE; i++) {
+		sum = 0;
+		for (int j = 0; j < BOARDSIZE; j++)	sum += board[j][i];
+		if (isCompleted(sum)) return 1;
+	}
+
+	// 대각선
+	sum = 0;
+	for (int i = 0; i < BOARDSIZE; i++) sum += board[i][i];
+	if (isCompleted(sum)) return 1;
+
+	// 역대각
+	sum = 0;
+	for (int i = 0; i < BOARDSIZE; i++) sum += board[i][BOARDSIZE - 1 - i];
+	if (isCompleted(sum)) return 1;
+
+	return 0;
+}
