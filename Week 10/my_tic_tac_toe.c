@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#define BOARDSIZE 3
+#define BOARDSIZE 5
   
 
 #include <stdio.h>
@@ -9,11 +9,11 @@
 
 
 void printBoard(char board[BOARDSIZE][BOARDSIZE]) {
-	printf("-----------\n");
+	//printf("-----------\n");
 	for (int i = 0; i < BOARDSIZE; i++){
 		for (int j = 0; j < BOARDSIZE; j++) printf(" %c |", board[i][j]);
 		printf("\n");
-		printf("-----------\n");
+		//printf("-----------\n");
 	}
 }
 
@@ -62,13 +62,13 @@ int main() {
 
 	int turn = 0; 
 	int round = 1;
-	char board[3][3];
+	char board[BOARDSIZE][BOARDSIZE];
 
 	int x = 0, y = 0; // current index
 
 	// 초기화
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++) board[i][j] = ' ';
+	for (int i = 0; i < BOARDSIZE; i++)
+		for (int j = 0; j < BOARDSIZE; j++) board[i][j] = ' ';
 
 
 	srand(time(NULL)); // Set Seed for Computer
@@ -87,8 +87,8 @@ int main() {
 			scanf("%d %d", &x, &y);
 
 			// 입력 예외처리
-			if ((x < 0) || (x > 2) || (y < 0) || (y > 2)) {
-				printf("0~2 사이의 좌표를 입력해주세요!\n");
+			if ((x < 0) || (x >= BOARDSIZE) || (y < 0) || (y >= BOARDSIZE)) {
+				printf("0~%d 사이의 좌표를 입력해주세요!\n", BOARDSIZE-1);
 				continue;
 			}
 
