@@ -55,8 +55,8 @@ int main() {
 		}
 		else { // Computer's Turn
 			printf("Computer's Turn\n");
-			x = rand() % 3; // 0~2 범위
-			y = rand() % 3; // 0~2 범위
+			x = rand() % BOARDSIZE; // 0~2 범위
+			y = rand() % BOARDSIZE; // 0~2 범위
 			
 			if (board[x][y] == ' ') { // 빈 공간인지 검사 후 할당
 				printf("Computer Input : %d %d\n", x, y);
@@ -75,7 +75,7 @@ int main() {
 		round++;
 	}
 	printBoard(board);
-	printf("Done -_- !\n");
+	printf("무승부 -_- !\n");
 
 	return 0;
 }
