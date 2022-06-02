@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 #define ALPHABETSIZE 26
@@ -13,7 +15,24 @@ void makeAlphabetArray(char usableAlphabets[]);
 
 int main() {
 	// 소문자에 대해서만 처리합니다.
-	char solution[100] = "meet at midnight"; // 정답 문자 배열
+
+
+	char solution1[100]= "meet at midnight";
+	char solution2[100] = "no idea";
+	char solution3[100] = "fucking exam";
+	char solution4[100] = "so sleeeeepy";
+	char solution5[100] = "haha happy day";
+
+	char* solutionArray[5] = { solution1, solution2 , solution3 , solution4 , solution5 };
+	char solution[100]; // 맞춰야 할 문자열
+
+	srand(time(NULL));
+	int randomNumber = rand() % 5;
+	strcpy(solution, solutionArray[randomNumber]);
+
+	printf("solution : %s\n", solution);
+
+
 	char yourAnswer[100]; // 현재까지 사용자가 맞춘 문자열이 들어있는 문자 배열
 	char usableAlphabets[27]; // 사용가능한 알파벳 목록
 	char triedAlphabets[27] ={NULL, }; // 시도한 알파벳들
@@ -109,8 +128,6 @@ int checkIfAlphabetIncluded(char solution[], char yourAnswer[], char checkAlphab
 
 
 void displayHangman(int remainChance) { // remainChance 는 0~
-	
-	// HANGMAN BOARD
 	switch (remainChance) {
 	case 0:
 		printf("   O   \n");
@@ -140,8 +157,6 @@ void displayHangman(int remainChance) { // remainChance 는 0~
 		printf("↘ \n");
 		break;
 	}
-
-	// 사용 알파벳 목록
 
 	return;
 
