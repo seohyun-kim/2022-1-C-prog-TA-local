@@ -18,10 +18,10 @@ int main() {
 	char usableAlphabets[27]; // 사용가능한 알파벳 목록
 	char triedAlphabets[27] ={NULL, }; // 시도한 알파벳들
 	char checkAlphabet; // 체크하고자 하는 알파벳
-	int chance = 6; // 총 기회 6번
+	int chance = 6; // 총 기회 7번 (0부터 시작)
 	int round = 0; // 현재 총 시도 횟수
 
-	printf("> 기회는 총 6번 입니다.\n");
+	printf("> 기회는 총 7번 입니다.\n");
 
 	makeAlphabetArray(usableAlphabets);
 	makeUnderbarforSolution(solution, yourAnswer);
@@ -30,7 +30,6 @@ int main() {
 		printf("알파벳 목록 : %s\n", usableAlphabets);
 		printf("\n > 알파벳을 하나 추측하세요 : ");
 		checkAlphabet = getchar();
-		//scanf("%c", &checkAlphabet);
 
 		if (strchr(triedAlphabets, checkAlphabet) == NULL) { // 사용된 적이 없으면
 			usableAlphabets[checkAlphabet - 'a'] = '*';  // 문자 사용되었음을 표기
@@ -45,7 +44,7 @@ int main() {
 		}
 
 		// display board
-		printf("\n ====================\n HANGMAN BOARD \n ====================\n");
+		printf("\n ====================\n     HANGMAN BOARD \n ====================\n");
 		displayHangman(chance);
 		printf("\n");
 
