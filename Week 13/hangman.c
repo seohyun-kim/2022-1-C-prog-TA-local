@@ -30,7 +30,7 @@ int main() {
 	int randomNumber = rand() % 5;
 	strcpy(solution, solutionArray[randomNumber]);
 
-	printf("solution : %s\n", solution);
+	//printf("solution : %s\n", solution);
 
 
 	char yourAnswer[100]; // 현재까지 사용자가 맞춘 문자열이 들어있는 문자 배열
