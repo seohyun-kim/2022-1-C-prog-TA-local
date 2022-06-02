@@ -52,7 +52,7 @@ int main() {
 
 		round++; // round count
 
-		printf("solution : %s\n", solution);
+		//printf("solution : %s\n", solution);
 		printf("yourAnswer: %s\n", yourAnswer);
 
 		if (strcmp(solution, yourAnswer) == 0) { // 두 문자열이 같으면
@@ -63,7 +63,7 @@ int main() {
 	}
 
 	printf(" > 모든 기회를 다 소진했습니다. GAME OVER!! \n ===============================\n");
-
+	printf("solution : %s\n", solution);
 	return 0;
 }
 
