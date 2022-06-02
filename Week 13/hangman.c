@@ -16,7 +16,6 @@ void makeAlphabetArray(char usableAlphabets[]);
 int main() {
 	// 소문자에 대해서만 처리합니다.
 
-
 	char solution1[100]= "meet at midnight";
 	char solution2[100] = "no idea";
 	char solution3[100] = "fucking exam";
@@ -28,10 +27,10 @@ int main() {
 
 	srand(time(NULL));
 	int randomNumber = rand() % 5;
+
 	strcpy(solution, solutionArray[randomNumber]);
 
-	//printf("solution : %s\n", solution);
-
+	// printf("solution : %s\n", solution);
 
 	char yourAnswer[100]; // 현재까지 사용자가 맞춘 문자열이 들어있는 문자 배열
 	char usableAlphabets[27]; // 사용가능한 알파벳 목록
@@ -44,6 +43,7 @@ int main() {
 
 	makeAlphabetArray(usableAlphabets);
 	makeUnderbarforSolution(solution, yourAnswer);
+	printf("yourAnswer: %s\n", yourAnswer);
 
 	while (chance > 0) {
 		printf("알파벳 목록 : %s\n", usableAlphabets);
@@ -102,7 +102,7 @@ void makeUnderbarforSolution(char solution[], char yourAnswer[]) {
 	for (int i = 0; i <= strlen(solution); i++)
 	{
 		if (( solution[i] >= 'a') && (solution[i] <= 'z')) {
-			yourAnswer[i] = '_'; // 영문 소문자자인경우 언더바로 변경
+			yourAnswer[i] = '_'; // 영문 소문자인경우 언더바로 변경
 		}
 		else if (solution[i] == ' ' || solution[i] == NULL) {
 			yourAnswer[i] = solution[i];
@@ -127,7 +127,7 @@ int checkIfAlphabetIncluded(char solution[], char yourAnswer[], char checkAlphab
 }
 
 
-void displayHangman(int remainChance) { // remainChance 는 0~
+void displayHangman(int remainChance) { // remainChance 는 0~6 (7번)
 	switch (remainChance) {
 	case 0:
 		printf("   O   \n");
