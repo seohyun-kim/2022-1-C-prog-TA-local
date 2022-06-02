@@ -48,7 +48,9 @@ int main() {
 		printf("\n ====================\n HANGMAN BOARD \n ====================\n");
 		displayHangman(chance);
 		printf("\n");
-		round++;
+
+
+		round++; // round count
 
 		printf("solution : %s\n", solution);
 		printf("yourAnswer: %s\n", yourAnswer);
@@ -60,7 +62,8 @@ int main() {
 		getchar();
 	}
 
-	printf(" > 모든 기회를 다 소진했습니다. GAME OVER!! \n");
+	printf(" > 모든 기회를 다 소진했습니다. GAME OVER!! \n ===============================\n");
+
 	return 0;
 }
 
@@ -68,25 +71,25 @@ int main() {
 void makeAlphabetArray(char usableAlphabets[]) {
 	for (int i = 0; i < ALPHABETSIZE; i++)
 	{
-		*(usableAlphabets + i) = 'a' + i;
+		usableAlphabets[i] = 'a' + i;
 	}
-	*(usableAlphabets + ALPHABETSIZE) = NULL;
+	usableAlphabets[ALPHABETSIZE] = NULL;
 }
 
 
-void makeUnderbarforSolution(char* solution, char* yourAnswer) {
+void makeUnderbarforSolution(char solution[], char yourAnswer[]) {
 	char* checkChar = yourAnswer;
 
 
 	for (int i = 0; i <= strlen(solution); i++)
 	{
-		if (( * (solution + i) >= 'a') && ( * (solution + i) <= 'z')) {
-			*(yourAnswer + i) = '_'; // 영문 소문자자인경우 언더바로 변경
+		if (( solution[i] >= 'a') && (solution[i] <= 'z')) {
+			yourAnswer[i] = '_'; // 영문 소문자자인경우 언더바로 변경
 		}
-		else if (*(solution + i) == ' ' || *(solution + i) == NULL) {
-			*(yourAnswer + i) = *(solution + i);
+		else if (solution[i] == ' ' || solution[i] == NULL) {
+			yourAnswer[i] = solution[i];
 		}
-		else *(yourAnswer + i) = '?';
+		else yourAnswer[i] = '?';
 	}
 }
 
